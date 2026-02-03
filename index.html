@@ -141,16 +141,18 @@
         let stage = 0; // 0 = Loser 1, 1 = Loser 2, 2 = Winner
         let hasScratched = false;
 
-        // Determine Role from URL (default to Grandparents)
+        // Determine Role from URL (obscured)
         const urlParams = new URLSearchParams(window.location.search);
-        const who = urlParams.get('who');
+        const code = urlParams.get('c'); // 'c' for code
         
-        let roleText = "Grandparents! ❤️"; // Default
-        if (who === 'mammu') {
+        let roleText = "Grandparents! ❤️"; // Default (or c=1)
+        
+        // Obscured codes to keep the URL vague
+        if (code === '8291') { // Random-looking code for Brother-in-law
             roleText = "Mammu and Mammi! ❤️";
-        } else if (who === 'masi') {
+        } else if (code === '3342') {
             roleText = "Masi and Masa! ❤️";
-        } else if (who === 'bua') {
+        } else if (code === '7719') {
             roleText = "Bua and Fufa! ❤️";
         }
 
