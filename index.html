@@ -282,11 +282,9 @@
             // Check if scratched enough to show button
             if (!hasScratched && stage < 2) {
                 hasScratched = true;
-                setTimeout(() => {
-                    nextBtn.style.opacity = '1';
-                    nextBtn.style.pointerEvents = 'auto';
-                    instructions.style.display = 'none';
-                }, 300); // Fast 300ms delay for smoother feel
+                nextBtn.style.opacity = '1';
+                nextBtn.style.pointerEvents = 'auto';
+                instructions.style.display = 'none';
             }
         }
 
