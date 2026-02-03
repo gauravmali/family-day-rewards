@@ -141,6 +141,19 @@
         let stage = 0; // 0 = Loser 1, 1 = Loser 2, 2 = Winner
         let hasScratched = false;
 
+        // Determine Role from URL (default to Grandparents)
+        const urlParams = new URLSearchParams(window.location.search);
+        const who = urlParams.get('who');
+        
+        let roleText = "Grandparents! ❤️"; // Default
+        if (who === 'mammu') {
+            roleText = "Mammu and Mammi! ❤️";
+        } else if (who === 'masi') {
+            roleText = "Masi and Masa! ❤️";
+        } else if (who === 'bua') {
+            roleText = "Bua and Fufa! ❤️";
+        }
+
         const stages = [
             {
                 emoji: "🍒🍒🍋",
@@ -159,7 +172,7 @@
             {
                 emoji: "👶✨",
                 title: "Oh Baby!",
-                text: "<span style='font-size:18px; display:block; margin-bottom:5px; font-weight:normal'>A little one is on the way...</span>You're going to be<br>Grandparents! ❤️",
+                text: `<span style='font-size:18px; display:block; margin-bottom:5px; font-weight:normal'>A little one is on the way...</span>You're going to be<br>${roleText}`,
                 badge: "Coming Oct 2026",
                 btnText: null // No button on final stage
             }
